@@ -22,8 +22,11 @@ lib-cov
 coverage
 *.lcov
 
-#DS_STORE
+# DS_STORE
 DS_STORE
+
+*.terraform/*
+terraform-provider-aws_*
 
 # nyc test coverage
 .nyc_output
