@@ -18,8 +18,12 @@ module "vpc" {
 # Підключаємо модуль ECR
 module "ecr" {
   source      = "./modules/ecr"
-  ecr_name    = "lesson-5-ecr"
+  ecr_name    = "lesson-6-ecr"
   scan_on_push = true
 }
 
- 
+module "eks" {
+  source = "./modules/eks"
+  cluster_name = "lesson-6-cluster"
+  subnet_ids   = module.vpc.public_subnets
+}
