@@ -1,0 +1,17 @@
+image:
+  repository: 408263245696.dkr.ecr.eu-north-1.amazonaws.com/lesson-6-ecr
+  tag: latest
+
+service:
+  type: LoadBalancer
+  port: 80
+
+autoscaler:
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70
+
+config:
+  DJANGO_SECRET_KEY: "your-secret-key"
+  DJANGO_ALLOWED_HOSTS: "*"
+

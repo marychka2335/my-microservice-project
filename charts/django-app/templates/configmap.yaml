@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-config
+data:
+  DJANGO_SECRET_KEY: {{ quote .Values.config.DJANGO_SECRET_KEY }}
+  DJANGO_ALLOWED_HOSTS: {{ quote .Values.config.DJANGO_ALLOWED_HOSTS }}
